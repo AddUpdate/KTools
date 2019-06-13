@@ -124,7 +124,7 @@ class SystemActivity : AppCompatActivity() {
                         AlertDialog.Builder(this)
                                 .setTitle("选择的联系人信息")
                                 .setMessage(contact.toString(4))
-                                .setNegativeButton("关闭") { dialog, which -> dialog.dismiss() }
+                                .setNegativeButton("关闭") { dialog, _ -> dialog.dismiss() }
                                 .create()
                                 .show()
                     } catch (e: JSONException) {
@@ -196,8 +196,8 @@ class SystemActivity : AppCompatActivity() {
                     AlertDialog.Builder(this@SystemActivity)
                             .setTitle("通讯录")
                             .setMessage(jsonObject!!.toString(4))
-                            .setPositiveButton("关闭") { dialog, which -> dialog.dismiss() }
-                            .setNegativeButton("复制") { dialog, which ->
+                            .setPositiveButton("关闭") { dialog, _ -> dialog.dismiss() }
+                            .setNegativeButton("复制") { dialog, _ ->
                                 try {
                                     ClipboardUtils.putStringToClipboard(jsonObject!!.toString(4))
                                     ToastUtils.showShortToast("复制成功")
@@ -308,7 +308,7 @@ class SystemActivity : AppCompatActivity() {
         AIDLDemoActivity.launch(this, null)
     }
 
-    fun onHideAppIconClicked(view: View) {
+    fun onHideAppIconClicked() {
         val manager = packageManager
         val componentName = ComponentName(this, MainActivity::class.java)
         val status = manager.getComponentEnabledSetting(componentName)
@@ -319,7 +319,7 @@ class SystemActivity : AppCompatActivity() {
         }
     }
 
-    fun onBtnHideStatusBarClicked(view: View) {
+    fun onBtnHideStatusBarClicked() {
         hideStatusBar()
     }
 
@@ -365,7 +365,7 @@ class SystemActivity : AppCompatActivity() {
         ToastUtils.showShortToast(ClipboardUtils.getStringFromClipboard())
     }
 
-    fun onBtnChangeWallpaper(view: View) {
+    fun onBtnChangeWallpaper() {
         wallpaperManager.setResource(R.raw.wallpaper)
         ToastUtils.showShortToast("壁纸更换成功！")
     }

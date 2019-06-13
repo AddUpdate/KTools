@@ -201,7 +201,7 @@ class EffectFragment : Fragment() {
 
         tai_chi.setOnClickListener {
             val taiChiView = TaiChiView(this@EffectFragment.activity)
-            KDialog.showCustomViewDialog(this@EffectFragment.activity, "太极图", taiChiView, { dialog, which -> dialog.dismiss() }) { dialog, which -> dialog.dismiss() }
+            KDialog.showCustomViewDialog(this@EffectFragment.activity, "太极图", taiChiView, { dialog, _ -> dialog.dismiss() }) { dialog, _ -> dialog.dismiss() }
             taiChiView.startRotate()
         }
 

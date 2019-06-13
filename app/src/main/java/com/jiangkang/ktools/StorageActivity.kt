@@ -46,7 +46,7 @@ class StorageActivity : AppCompatActivity() {
         val dialogView = LayoutInflater.from(this)
                 .inflate(R.layout.layout_dialog_key_value, null)
 
-        KDialog.showCustomViewDialog(this, "将值存入SharedPreference中", dialogView, DialogInterface.OnClickListener { dialog, which ->
+        KDialog.showCustomViewDialog(this, "将值存入SharedPreference中", dialogView, DialogInterface.OnClickListener { dialog, _ ->
             val etKey = dialogView.findViewById<View>(R.id.et_key) as EditText
             val etValue = dialogView.findViewById<View>(R.id.et_value) as EditText
 
@@ -64,7 +64,7 @@ class StorageActivity : AppCompatActivity() {
             ToastUtils.showShortToast("存储成功")
 
             dialog.dismiss()
-        }, DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+        }, DialogInterface.OnClickListener { dialog, _ -> dialog.dismiss() })
 
         SpUtils.getInstance(this, "storage")
                 .putString("author", "姜康")
@@ -80,7 +80,7 @@ class StorageActivity : AppCompatActivity() {
         tvValue.visibility = View.GONE
         etValue.visibility = View.GONE
 
-        KDialog.showCustomViewDialog(this, "从SharedPreference中取值", dialogView, DialogInterface.OnClickListener { dialog, which ->
+        KDialog.showCustomViewDialog(this, "从SharedPreference中取值", dialogView, DialogInterface.OnClickListener { dialog, _ ->
             val key = etKey.text.toString()
 
             if (TextUtils.isEmpty(key)) {
@@ -93,7 +93,7 @@ class StorageActivity : AppCompatActivity() {
 
             ToastUtils.showToast(value, 9000)
             dialog.dismiss()
-        }, DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+        }, DialogInterface.OnClickListener { dialog, _ -> dialog.dismiss() })
 
     }
 

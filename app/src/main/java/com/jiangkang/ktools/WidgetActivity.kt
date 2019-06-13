@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.transition.Fade
 import android.view.Window
@@ -39,7 +40,14 @@ class WidgetActivity : AppCompatActivity() {
         }
 
         btn_show_floating_window.onClick {
-            FloatingWindow.show(mContext, "来来来，看这里\n这是一个悬浮框")
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this@WidgetActivity)) {
+                    startActivity(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION))
+                } else {
+                    FloatingWindow.show(mContext, "来来来，看这里\n这是一个悬浮框")
+                }
+            }
         }
 
 
@@ -67,7 +75,7 @@ class WidgetActivity : AppCompatActivity() {
 
 
         btn_widget_dialog.onClick {
-            launch(KDialogActivity::class.java,null)
+            launch(KDialogActivity::class.java, null)
         }
 
 
@@ -85,7 +93,7 @@ class WidgetActivity : AppCompatActivity() {
         }
 
         btn_constraint_layout.onClick {
-            ConstraintLayoutActivity.launch(mContext,null)
+            ConstraintLayoutActivity.launch(mContext, null)
         }
 
 
@@ -98,7 +106,6 @@ class WidgetActivity : AppCompatActivity() {
             finishAfterTransition()
         }
     }
-
 
 
     companion object {

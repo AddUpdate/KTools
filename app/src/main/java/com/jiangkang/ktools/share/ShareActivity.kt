@@ -11,6 +11,7 @@ import android.util.Log
 import com.jiangkang.ktools.BuildConfig
 import com.jiangkang.ktools.R
 import com.jiangkang.tools.utils.FileUtils
+import com.jiangkang.tools.utils.LogUtils
 import com.jiangkang.tools.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_share.*
 import org.jetbrains.anko.doAsync
@@ -73,9 +74,9 @@ class ShareActivity : AppCompatActivity() {
 
     private fun handleMultiImage(intent: Intent) {
         val imageUris: ArrayList<Uri> = intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM)
-        imageUris?.let {
+        imageUris.let {
             imageUris.map {
-                Log.d(TAG, it.toString())
+                LogUtils.d(TAG, it.toString())
             }
         }
     }

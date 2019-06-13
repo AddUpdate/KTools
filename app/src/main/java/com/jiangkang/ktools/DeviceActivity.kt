@@ -70,7 +70,7 @@ class DeviceActivity : AppCompatActivity() {
         btnAdbWireless.onClick {
             doAsync {
                 val command = "setprop service.adb.tcp.port 5555 && stop adbd && start adbd"
-                val result = ShellUtils.execCmd(command, true)
+                ShellUtils.execCmd(command, true)
                 runOnUiThread {
                     val ip = DeviceUtils.getIPAddress(this@DeviceActivity)
                     KDialog.showMsgDialog(this@DeviceActivity, "adb connect " + ip!!)

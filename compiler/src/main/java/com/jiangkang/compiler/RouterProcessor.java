@@ -42,6 +42,7 @@ public class RouterProcessor extends BaseProcessor {
         super.init(processingEnvironment);
         //初始化一些帮助类
         maps = new HashMap<>();
+        msgUtils.info("----------------------init processor---------------------------");
     }
 
 
@@ -50,6 +51,8 @@ public class RouterProcessor extends BaseProcessor {
         //遍历
         for (Element element : roundEnvironment.getElementsAnnotatedWith(Router.class)) {
             if (!SuperficialValidation.validateElement(element)) continue;
+
+            msgUtils.info(" >>> " + element.toString() + " <<< ");
 
             //得到类信息
             TypeElement typeElement = (TypeElement) element;
