@@ -1,7 +1,7 @@
 include ':app', ':tools', ':requests', ':annotations', ':storage', ':hack', ':widget', ':kdownloader', ':compiler', ':hybrid', ':jni', ':design', ':jetpack', ':image', ':anko', ':klint', ':kanimation', ':container', ':media'
 
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-        settingsDir.parentFile,
-        'KTools/kflutter/.android/include_flutter.groovy'
-))
+//setBinding(new Binding([gradle: this]))
+//evaluate(new File(
+//        settingsDir.parentFile,
+//        'KTools/kflutter/.android/include_flutter.groovy'
+//))
