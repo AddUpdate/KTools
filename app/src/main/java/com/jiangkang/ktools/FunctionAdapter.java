@@ -61,7 +61,7 @@ public class FunctionAdapter extends RecyclerView.Adapter<FunctionAdapter.ViewHo
         functionList.add(new FunctionEntity("JNI", JNIActivity.class, R.drawable.ic_jni));
         functionList.add(new FunctionEntity("Jetpack", JetpackMainActivity.class, R.drawable.ic_jetpack));
         functionList.add(new FunctionEntity("Anko", AnkoMainActivity.class, R.drawable.ic_anko));
-        functionList.add(new FunctionEntity("Flutter", FlutterContainerActivity.class, R.drawable.ic_flutter));
+//        functionList.add(new FunctionEntity("Flutter", FlutterContainerActivity.class, R.drawable.ic_flutter));
     }
 
     @Override

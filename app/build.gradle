@@ -7,6 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+//apply plugin: com.jiangkang.gradle.kotlin.KGradlePlugin
+
 android {
 
     //仅仅在编译的时候起作用，建议总是使用最新版本，值是一个API Level
@@ -206,6 +208,7 @@ dependencies {
 
         implementation Deps.kotlin
         implementation Deps.anko
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M2'
 
         implementation Deps.Support.multidex
 

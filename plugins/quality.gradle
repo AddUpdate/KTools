@@ -46,9 +46,9 @@ task pmd(type: Pmd, group: 'verification') {
     reports {
         xml.enabled = false
         html.enabled = true
-        html {
-            destination "$projectDir.absolutePath/build/reports/pmd/pmd.html"
-        }
+//        html {
+//            destination "$projectDir.absolutePath/build/reports/pmd/pmd.html"
+//        }
     }
 }
 

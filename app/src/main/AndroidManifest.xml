@@ -41,7 +41,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FlutterContainerActivity"></activity>
+        <!--<activity android:name=".FlutterContainerActivity"></activity>-->
 
         <provider
             android:name="android.support.v4.content.FileProvider"

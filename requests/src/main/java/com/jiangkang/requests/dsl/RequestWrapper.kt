@@ -49,7 +49,7 @@ class RequestWrapper {
 
         return Flowable.create<Response>(
                 { e ->
-                    e.onNext(sendRequest(wrapper))
+                    sendRequest(wrapper)?.let { e.onNext(it) }
                 },
                 BackpressureStrategy.BUFFER
         )

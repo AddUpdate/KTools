@@ -5,7 +5,7 @@ object Versions {
 
     const val androidPluginVersion = "3.1.3"
 
-    const val kotlin_version = "1.3.11"
+    const val kotlin_version = "1.3.41"
 
     //project settings
     const val compileSdkVersion = 28

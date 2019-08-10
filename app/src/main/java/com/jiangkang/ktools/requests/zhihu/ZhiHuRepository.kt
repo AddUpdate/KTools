@@ -7,6 +7,7 @@ import com.jiangkang.requests.KRequests
 import com.jiangkang.requests.dsl.RequestWrapper
 import com.jiangkang.requests.zhihu.ZhihuApi
 import com.jiangkang.requests.zhihu.bean.Story
+import com.jiangkang.tools.utils.LogUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 /**
@@ -21,11 +22,9 @@ object ZhiHuRepository {
 
         KRequests.request(ZhihuApi::class.java).latestNews
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
+                .subscribe {
                     data.value = it.stories
-                })
-
-
+                }
         queryLatestDailyNews()
 
         return data
@@ -38,10 +37,10 @@ object ZhiHuRepository {
                 url = "http://news-at.zhihu.com/api/4/news/latest"
                 method = "GET"
                 onSuccess {
-                    response -> Log.d("http",response.body()!!.string())
+                    response -> LogUtils.d("http",response.body()!!.string())
                 }
                 onFailed {
-                    t -> Log.d("http",t.message)
+                    t -> LogUtils.d("http",t.message)
                 }
             }
         }

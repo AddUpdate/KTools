@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case 0:
 //                AboutActivity.launch(this, null);
-                RouterHelper.startAboutActivity(this);
+//                RouterHelper.startAboutActivity(this);
                 break;
             case 1:
                 openBrowser("https://github.com/jiangkang/KTools");

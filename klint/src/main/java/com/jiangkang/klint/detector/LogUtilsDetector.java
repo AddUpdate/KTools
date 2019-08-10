@@ -47,8 +47,6 @@ public class LogUtilsDetector extends Detector implements SourceCodeScanner {
     }
 
 
-
-
     @Override
     public void visitMethod(JavaContext context, UCallExpression node, PsiMethod method) {
 

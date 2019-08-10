@@ -1,5 +1,5 @@
 include ':app', ':tools', ':requests', ':annotations', ':storage', ':hack', ':widget', ':kdownloader', ':compiler', ':hybrid', ':jni', ':design', ':jetpack', ':image', ':anko', ':klint', ':kanimation', ':container', ':media'
-
+include ':buildSrc'
 //setBinding(new Binding([gradle: this]))
 //evaluate(new File(
 //        settingsDir.parentFile,

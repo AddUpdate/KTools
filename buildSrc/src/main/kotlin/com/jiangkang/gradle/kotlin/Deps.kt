@@ -20,7 +20,7 @@ object Deps {
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin_version}"
 
-    val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
+    val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M2"
 
     val anko = "org.jetbrains.anko:anko:${Versions.anko_version}"
 
