@@ -59,7 +59,7 @@ class DemoTransform : Transform() {
         FileUtils.forceMkdir(dstDir)
         val srcPath = sourceDir.absolutePath
         val dstPath = dstDir.absolutePath
-        sourceDir.listFiles { file, name ->
+        sourceDir.listFiles { file, _ ->
             val dstFilePath = file.absolutePath.replace(srcPath,dstPath)
             val dstFile = File(dstFilePath)
             if (file.isDirectory){

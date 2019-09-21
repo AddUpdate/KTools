@@ -4,10 +4,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //官方给出的API,这里必须用compileOnly，使用implementation和api都会报错
-    compileOnly 'com.android.tools.lint:lint-api:26.1.2'
+    compileOnly 'com.android.tools.lint:lint-api:26.5.0'
 
     //已有的检查
-    compileOnly 'com.android.tools.lint:lint-checks:26.1.2'
+    compileOnly 'com.android.tools.lint:lint-checks:26.5.0'
 }
 
 sourceCompatibility = "1.8"

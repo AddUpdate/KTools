@@ -3,7 +3,7 @@ package com.jiangkang.gradle.kotlin
 
 object Versions {
 
-    const val androidPluginVersion = "3.1.3"
+    const val androidPluginVersion = "3.5.0"
 
     const val kotlin_version = "1.3.41"
 

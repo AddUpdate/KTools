@@ -43,23 +43,14 @@ open class KApplication : Application() {
 
         initANRWatchDog()
 
-//        initTool()
 
         Debug.stopMethodTracing()
 
 
         Fresco.initialize(this)
 
-//        initSonar()
-
     }
 
-
-//    private fun initTool() {
-//        if (BuildConfig.DEBUG) {
-//            AndroidDevMetrics.initWith(this.applicationContext)
-//        }
-//    }
 
     private fun initANRWatchDog() {
         ANRWatchDog().start()
@@ -72,23 +63,6 @@ open class KApplication : Application() {
         LeakCanary.install(this)
     }
 
-//    private fun initWeex() {
-//
-//        val config = InitConfig.Builder()
-//                .setImgAdapter(ImageAdapter())
-//                .build()
-//
-//        WXSDKEngine.initialize(this, config)
-//
-//    }
-
-//    private fun initARouter() {
-//        if (BuildConfig.DEBUG) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
-//            ARouter.openLog()     // 打印日志
-//            ARouter.openDebug()   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
-//        }
-//        ARouter.init(this)
-//    }
 
     private fun enableStrictMode() {
         if (BuildConfig.DEBUG) {
