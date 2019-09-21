@@ -2,10 +2,10 @@ package com.jiangkang.tools.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.ColorInt;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.google.zxing.BarcodeFormat;
@@ -16,7 +16,6 @@ import com.google.zxing.common.CharacterSetECI;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-import java.nio.charset.Charset;
 import java.util.Hashtable;
 
 /**

@@ -9,38 +9,38 @@
     >
 
 
-  <android.support.design.widget.TabLayout
+  <com.google.android.material.tabs.TabLayout
       android:id="@+id/tab_layout_static"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="top"
       >
 
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_item_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="图片"
         />
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_item_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="文章"
         />
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_item_music"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="音乐"
         />
 
-    <android.support.design.widget.TabItem
+    <com.google.android.material.tabs.TabItem
         android:id="@+id/tab_item_video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="视频"
         />
 
-  </android.support.design.widget.TabLayout>
+  </com.google.android.material.tabs.TabLayout>
 </LinearLayout>

@@ -1,11 +1,11 @@
 package com.jiangkang.ktools.requests.zhihu
 
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +41,7 @@ class ZhihuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rcZhiHu.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        rcZhiHu.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context, LinearLayout.VERTICAL, false)
 
         val viewModel = ViewModelProviders.of(this).get(ZhihuListViewModel::class.java)
 

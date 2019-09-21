@@ -6,7 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.jiangkang.tools.device.DeviceUtils
 import com.jiangkang.tools.device.ScreenUtils
 import com.jiangkang.tools.service.WatchingTopActivityService

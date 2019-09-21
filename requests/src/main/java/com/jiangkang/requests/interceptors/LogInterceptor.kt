@@ -33,16 +33,16 @@ class LogInterceptor : Interceptor {
 
         Log.d(TAG, "---------------------HTTP START-------------------------------")
 
-        val url = request.url().toString()
-        val method = request.method()
-        val requestHeaders = request.headers()
-        val requestBody = request.body()
+        val url = request.url.toString()
+        val method = request.method
+        val requestHeaders = request.headers
+        val requestBody = request.body
 
         val requestInfo = " --> $method $url (${requestBody?.contentLength()})"
         Log.d(TAG, requestInfo)
 
         //headers
-        for (index in 0 until requestHeaders.size()) {
+        for (index in 0 until requestHeaders.size) {
             Log.d(TAG, "${requestHeaders.name(index)} : ${requestHeaders.value(index)} \n")
         }
 
@@ -50,14 +50,14 @@ class LogInterceptor : Interceptor {
 
 
         val response = chain.proceed(request)
-        val responseHeaders = response.headers()
-        val responseBody = response.body()
+        val responseHeaders = response.headers
+        val responseBody = response.body
 
-        val responseInfo = " <-- ${response.request().url()}"
+        val responseInfo = " <-- ${response.request.url}"
         Log.d(TAG, responseInfo)
 
         //headers
-        for (index in 0 until responseHeaders.size()) {
+        for (index in 0 until responseHeaders.size) {
             Log.d(TAG, "${responseHeaders.name(index)} : ${responseHeaders.value(index)} \n")
         }
 

@@ -1,7 +1,7 @@
 package com.jiangkang.anko
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import org.jetbrains.anko.button
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.toast

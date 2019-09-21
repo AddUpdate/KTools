@@ -1,8 +1,8 @@
 package com.jiangkang.jetpack.ui.architecture.paging
 
-import android.arch.paging.PagedListAdapter
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.RecyclerView
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +12,11 @@ import com.jiangkang.requests.github.entity.User
 import kotlinx.android.synthetic.main.item_network_state.view.*
 import kotlinx.android.synthetic.main.item_users.view.*
 
-class UserAdapter(private val retryCallback: () -> Unit) : PagedListAdapter<User, RecyclerView.ViewHolder>(UserDiffCallback) {
+class UserAdapter(private val retryCallback: () -> Unit) : PagedListAdapter<User, androidx.recyclerview.widget.RecyclerView.ViewHolder>(UserDiffCallback) {
 
     private var networkState: NetworkState? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         return when (viewType) {
             R.layout.item_users -> UserViewHolder.create(parent)
             R.layout.item_network_state -> NetworkStateViewHolder.create(parent, retryCallback)
@@ -24,7 +24,7 @@ class UserAdapter(private val retryCallback: () -> Unit) : PagedListAdapter<User
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
             R.layout.item_users -> (holder as UserViewHolder).bindTo(getItem(position))
             R.layout.item_network_state -> (holder as NetworkStateViewHolder).bindTo(networkState)
@@ -89,7 +89,7 @@ class UserAdapter(private val retryCallback: () -> Unit) : PagedListAdapter<User
     }
 }
 
-class NetworkStateViewHolder(val view: View, private val retryCallback: () -> Unit) : RecyclerView.ViewHolder(view) {
+class NetworkStateViewHolder(val view: View, private val retryCallback: () -> Unit) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
 
     init {
         itemView.retryLoadingButton.setOnClickListener { retryCallback() }
@@ -117,7 +117,7 @@ class NetworkStateViewHolder(val view: View, private val retryCallback: () -> Un
 
 }
 
-class UserViewHolder(view:View) : RecyclerView.ViewHolder(view) {
+class UserViewHolder(view:View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
     fun bindTo(user: User?) {
         itemView.UserName.text = user?.login
         Glide.with(itemView.context)

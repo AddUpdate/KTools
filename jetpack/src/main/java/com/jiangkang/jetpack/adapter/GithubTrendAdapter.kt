@@ -1,9 +1,9 @@
 package com.jiangkang.jetpack.adapter
 
 import android.content.Context
-import android.support.v7.recyclerview.extensions.ListAdapter
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +19,7 @@ class GithubTrendAdapter(context: Context) : ListAdapter<Item, GithubTrendAdapte
 
     private val mContext: Context = context
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         val ivIcon = itemView.findViewById<ImageView>(R.id.iv_icon)
         val tvProjectName = itemView.findViewById<TextView>(R.id.tv_name)

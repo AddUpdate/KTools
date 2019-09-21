@@ -4,8 +4,8 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.TimeInterpolator
 import android.animation.ValueAnimator
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.SimpleItemAnimator
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SimpleItemAnimator
 import android.util.Log
 
 /**
@@ -13,23 +13,23 @@ import android.util.Log
  * {@link android.support.v7.widget.RecyclerView#notifyItemChanged(int position)}
  *
  * */
-class SlideItemAnimator : SimpleItemAnimator() {
+class SlideItemAnimator : androidx.recyclerview.widget.SimpleItemAnimator() {
 
     private val DEBUG = true
 
     private var mDefaultInterpolator: TimeInterpolator? = null
     private var mPendingChanges = ArrayList<ChangeInfo>()
     private var mChangesList = ArrayList<ArrayList<ChangeInfo>>()
-    private var mChangeAnimations = ArrayList<RecyclerView.ViewHolder>()
+    private var mChangeAnimations = ArrayList<androidx.recyclerview.widget.RecyclerView.ViewHolder>()
 
-    class ChangeInfo(var oldHolder: RecyclerView.ViewHolder?, var newHolder: RecyclerView.ViewHolder?) {
+    class ChangeInfo(var oldHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder?, var newHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder?) {
         var fromX: Int = 0
         var fromY: Int = 0
         var toX: Int = 0
         var toY: Int = 0
 
         internal constructor(
-                oldHolder: RecyclerView.ViewHolder, newHolder: RecyclerView.ViewHolder,
+                oldHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, newHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
                 fromX: Int, fromY: Int, toX: Int, toY: Int
         ) : this(oldHolder, newHolder) {
             this.fromX = fromX
@@ -52,7 +52,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
 
     private val TAG = "KItemAnimator"
 
-    override fun animateAdd(holder: RecyclerView.ViewHolder?): Boolean {
+    override fun animateAdd(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder?): Boolean {
         return true
     }
 
@@ -136,7 +136,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
 
     }
 
-    override fun animateMove(holder: RecyclerView.ViewHolder?, fromX: Int, fromY: Int, toX: Int, toY: Int): Boolean {
+    override fun animateMove(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder?, fromX: Int, fromY: Int, toX: Int, toY: Int): Boolean {
         return true
     }
 
@@ -152,8 +152,8 @@ class SlideItemAnimator : SimpleItemAnimator() {
      * false otherwise.
      * */
     override fun animateChange(
-            oldHolder: RecyclerView.ViewHolder,
-            newHolder: RecyclerView.ViewHolder,
+            oldHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
+            newHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
             fromLeft: Int,
             fromTop: Int,
             toLeft: Int,
@@ -186,7 +186,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
                 || !mChangesList.isEmpty())
     }
 
-    override fun endAnimation(item: RecyclerView.ViewHolder) {
+    override fun endAnimation(item: androidx.recyclerview.widget.RecyclerView.ViewHolder) {
         val view = item.itemView
         //取消属性动画
         view.animate().cancel()
@@ -212,7 +212,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
         }
     }
 
-    override fun animateRemove(holder: RecyclerView.ViewHolder?): Boolean {
+    override fun animateRemove(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder?): Boolean {
         return true
     }
 
@@ -227,7 +227,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
         }
     }
 
-    private fun resetAnimation(holder: RecyclerView.ViewHolder) {
+    private fun resetAnimation(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder) {
         if (mDefaultInterpolator == null) {
             mDefaultInterpolator = ValueAnimator().interpolator
         }
@@ -235,7 +235,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
         endAnimation(holder)
     }
 
-    private fun endChangeAnimation(infoList: MutableList<ChangeInfo>, item: RecyclerView.ViewHolder) {
+    private fun endChangeAnimation(infoList: MutableList<ChangeInfo>, item: androidx.recyclerview.widget.RecyclerView.ViewHolder) {
         for (i in infoList.indices.reversed()) {
             val changeInfo = infoList[i]
             if (endChangeAnimationIfNecessary(changeInfo, item)) {
@@ -248,7 +248,7 @@ class SlideItemAnimator : SimpleItemAnimator() {
 
     private fun endChangeAnimationIfNecessary(
             changeInfo: ChangeInfo,
-            item: RecyclerView.ViewHolder?
+            item: androidx.recyclerview.widget.RecyclerView.ViewHolder?
     ): Boolean {
         var oldItem = false
         if (changeInfo.newHolder === item) {

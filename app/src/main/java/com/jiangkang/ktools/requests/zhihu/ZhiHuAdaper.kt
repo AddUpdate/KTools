@@ -1,6 +1,6 @@
 package com.jiangkang.ktools.requests.zhihu
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
  * description：知乎API相关
  */
 
-class ZhiHuAdapter(val data: ArrayList<Story>) : RecyclerView.Adapter<ZhiHuAdapter.ViewHolder>() {
+class ZhiHuAdapter(val data: ArrayList<Story>) : androidx.recyclerview.widget.RecyclerView.Adapter<ZhiHuAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,7 +35,7 @@ class ZhiHuAdapter(val data: ArrayList<Story>) : RecyclerView.Adapter<ZhiHuAdapt
     }
 
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         fun bind(story: Story) {
             Glide.with(itemView.context)

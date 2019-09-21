@@ -35,7 +35,7 @@ object DownloaderUtils {
         if (response!!.isSuccessful) {
             val file = File(filePath)
             val buffer = BufferedOutputStream(FileOutputStream(file))
-            buffer.write(response.body()?.bytes())
+            buffer.write(response.body?.bytes())
             buffer.flush()
             return file
         }

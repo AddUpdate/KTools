@@ -7,12 +7,11 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.jiangkang.ktools.IComputation;
 import com.jiangkang.ktools.R;
-import com.jiangkang.ktools.widget.KDialogActivity;
 import com.jiangkang.tools.utils.ToastUtils;
 
 import java.util.Random;

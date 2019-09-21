@@ -1,6 +1,6 @@
 package com.jiangkang.jni
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jiangkang.tools.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_jni.*

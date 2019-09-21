@@ -4,7 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Build;
-import android.support.annotation.RequiresPermission;
+import androidx.annotation.RequiresPermission;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;

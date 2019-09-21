@@ -1,8 +1,8 @@
 package com.jiangkang.ktools;
 
 import android.app.Activity;
-import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
 import java.io.Serializable;
 
 /**

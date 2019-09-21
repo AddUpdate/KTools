@@ -2,22 +2,15 @@ package com.jiangkang.hack;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.alibaba.android.arouter.facade.annotation.Route;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
-@Route(path = "/hack/HackActivity")
 public class HackActivity extends AppCompatActivity {
 
 
@@ -57,15 +50,7 @@ public class HackActivity extends AppCompatActivity {
 
             mOnClickListener.set(listenerInfo,hookedOnClickListener);
 
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | ClassNotFoundException | NoSuchFieldException e) {
             e.printStackTrace();
         }
     }

@@ -24,19 +24,19 @@ open class AnimatedShapeView : View {
     private var mBackgroundPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     constructor(context: Context?) : super(context) {
-        initAttributes(context, null)
+        initAttributes()
     }
 
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
-        initAttributes(context, attrs)
+        initAttributes()
     }
 
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initAttributes(context, attrs)
+        initAttributes()
     }
 
 
-    fun initAttributes(context: Context?, attrs: AttributeSet?) {
+    private fun initAttributes() {
         mBackgroundPaint.color = Color.parseColor("#00897B")
     }
 

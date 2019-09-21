@@ -67,13 +67,13 @@ class RequestWrapper {
     private fun sendRequest(wrapper: RequestWrapper): Response? {
         var request: Request? = null
 
-        val requestBuilder = Request.Builder().url(wrapper.url)
+        val requestBuilder = Request.Builder().url(wrapper.url.toString())
 
         when (wrapper.method.toLowerCase()) {
             "get" -> request = requestBuilder.get().build()
-            "post" -> request = requestBuilder.post(wrapper.body).build()
+            "post" -> request = requestBuilder.post(wrapper.body!!).build()
             "delete" -> request = requestBuilder.delete(wrapper.body).build()
-            "put" -> request = requestBuilder.put(wrapper.body).build()
+            "put" -> request = requestBuilder.put(wrapper.body!!).build()
         }
 
         val client = OkHttpClient.Builder()
@@ -82,7 +82,7 @@ class RequestWrapper {
                 .readTimeout(wrapper.timeout, TimeUnit.SECONDS)
                 .addInterceptor(HttpLoggingInterceptor())
                 .build()
-        return client.newCall(request).execute()
+        return client.newCall(request!!).execute()
     }
 
 

@@ -1,6 +1,6 @@
 package com.jiangkang.ktools;
 
-import android.support.test.filters.SmallTest;
+import androidx.test.filters.SmallTest;
 
 import org.junit.Before;
 

@@ -2,7 +2,7 @@ package com.jiangkang.kdownloader
 
 import android.os.Bundle
 import android.os.Environment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.jiangkang.tools.utils.ToastUtils
 import com.jiangkang.tools.widget.KDialog
 import kotlinx.android.synthetic.main.activity_kdownloader.*

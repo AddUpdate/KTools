@@ -1,4 +1,4 @@
-import com.jiangkang.gradle.kotlin.Deps
+
 import com.jiangkang.gradle.kotlin.Versions
 
 apply plugin: 'com.android.library'
@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -30,20 +30,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation Deps.Support.v7
-    implementation Deps.Support.v4
-    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    api Deps.Fresco.fresco
-    api Deps.Fresco.animated_gif
-    api Deps.Fresco.webpsupport
-    api Deps.Fresco.animated_webp
+    api 'com.facebook.fresco:fresco:2.0.0'
+    api 'com.facebook.fresco:animated-gif:2.0.0'
+    api "com.facebook.fresco:webpsupport:2.0.0"
+    api 'com.facebook.fresco:animated-webp:2.0.0'
 
-    implementation Deps.kotlin
-    implementation Deps.Support.constraint_layout
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
 
 }

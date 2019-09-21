@@ -8,18 +8,14 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.jiangkang.ktools.R;
 import com.jiangkang.tools.struct.JsonGenerator;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 利用Loader获取通讯录列表

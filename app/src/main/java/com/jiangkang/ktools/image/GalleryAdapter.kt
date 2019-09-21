@@ -1,7 +1,7 @@
 package com.jiangkang.ktools.image
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +15,7 @@ import java.util.*
  * Created by jiangkang on 2017/10/16.
  */
 
-class GalleryAdapter(private val context: Context) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
+class GalleryAdapter(private val context: Context) : androidx.recyclerview.widget.RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
 
     private var urlList: ArrayList<String>? = null
 
@@ -44,7 +44,7 @@ class GalleryAdapter(private val context: Context) : RecyclerView.Adapter<Galler
         return urlList?.size ?: 0
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         var ivContent: ImageView = itemView.findViewById<View>(R.id.iv_content) as ImageView
 

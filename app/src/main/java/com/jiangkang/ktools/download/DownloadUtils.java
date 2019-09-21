@@ -1,10 +1,9 @@
 package com.jiangkang.ktools.download;
 
 import android.os.Environment;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
-import com.jiangkang.tools.utils.FileUtils;
 import com.jiangkang.tools.utils.ToastUtils;
 
 import java.io.BufferedOutputStream;

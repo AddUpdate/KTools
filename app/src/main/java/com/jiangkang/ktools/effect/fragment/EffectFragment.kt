@@ -8,7 +8,7 @@ import android.graphics.Color
 import android.graphics.Path
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.support.v4.media.session.PlaybackStateCompat
 import android.view.*
 import android.view.animation.BounceInterpolator
@@ -47,11 +47,6 @@ val colors = arrayOf(
 class EffectFragment : Fragment() {
 
     private lateinit var mContext: Context
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        mContext = context!!
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

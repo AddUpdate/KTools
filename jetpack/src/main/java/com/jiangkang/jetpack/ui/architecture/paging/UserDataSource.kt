@@ -1,7 +1,7 @@
 package com.jiangkang.jetpack.ui.architecture.paging
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.paging.ItemKeyedDataSource
+import androidx.lifecycle.MutableLiveData
+import androidx.paging.ItemKeyedDataSource
 import com.jiangkang.requests.github.GithubService
 import com.jiangkang.requests.github.entity.User
 import io.reactivex.Completable

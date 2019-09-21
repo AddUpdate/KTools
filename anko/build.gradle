@@ -1,4 +1,3 @@
-import com.jiangkang.gradle.kotlin.Deps
 import com.jiangkang.gradle.kotlin.Versions
 
 apply plugin: 'com.android.library'
@@ -14,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -30,17 +29,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation Deps.Support.v7
-    implementation Deps.Support.constraint_layout
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation Deps.Arch.Lifecycle.extentions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 
-    testImplementation Deps.junit
+    testImplementation "junit:junit:4.12"
 
-    androidTestImplementation Deps.Support.Test.runner
-    androidTestImplementation Deps.Support.Test.espresso
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation Deps.kotlin
-    implementation Deps.anko
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
+    implementation "org.jetbrains.anko:anko:0.10.8"
 
 }

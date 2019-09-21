@@ -1,6 +1,6 @@
 package com.jiangkang.annotations.apt;
 
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

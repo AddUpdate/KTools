@@ -3,8 +3,8 @@ package com.jiangkang.ktools.widget;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import com.jiangkang.ktools.R;
 import com.jiangkang.tools.utils.ToastUtils;

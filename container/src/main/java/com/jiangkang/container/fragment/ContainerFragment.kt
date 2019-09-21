@@ -1,8 +1,8 @@
 package com.jiangkang.container.fragment
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v4.app.Fragment
+import androidx.annotation.LayoutRes
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 private const val ARG_LAYOUT_ID = "layout_id"
 private const val ARG_TITLE = "title"
 
-open class ContainerFragment : Fragment() {
+open class ContainerFragment : androidx.fragment.app.Fragment() {
 
     private var mLayoutId: Int = -1
 

@@ -1,8 +1,6 @@
 package com.jiangkang.requests;
 
-import android.support.annotation.NonNull;
-
-import java.lang.reflect.Constructor;
+import androidx.annotation.NonNull;
 
 /**
  *

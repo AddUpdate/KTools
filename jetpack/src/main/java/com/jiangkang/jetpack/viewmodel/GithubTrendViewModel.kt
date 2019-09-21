@@ -1,8 +1,8 @@
 package com.jiangkang.jetpack.viewmodel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MediatorLiveData
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.ViewModel;
 import com.jiangkang.jetpack.data.Item
 import com.jiangkang.jetpack.repository.GithubRepository
 import com.jiangkang.tools.utils.LogUtils

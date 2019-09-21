@@ -2,15 +2,11 @@ package com.jiangkang.tools.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.MainThread;
-
-import com.jiangkang.tools.King;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
-import java.util.Set;
 
 /**
  *

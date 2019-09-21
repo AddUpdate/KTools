@@ -1,7 +1,7 @@
 package com.jiangkang.ktools.requests.zhihu
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import android.util.Log
 import com.jiangkang.requests.KRequests
 import com.jiangkang.requests.dsl.RequestWrapper
@@ -37,7 +37,7 @@ object ZhiHuRepository {
                 url = "http://news-at.zhihu.com/api/4/news/latest"
                 method = "GET"
                 onSuccess {
-                    response -> LogUtils.d("http",response.body()!!.string())
+                    response -> LogUtils.d("http", response.body!!.string())
                 }
                 onFailed {
                     t -> LogUtils.d("http",t.message)

@@ -2,9 +2,9 @@ package com.jiangkang.ktools.widget
 
 
 import android.os.Bundle
-import android.support.constraint.ConstraintSet
-import android.support.transition.TransitionManager
-import android.support.v4.app.Fragment
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.transition.TransitionManager
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

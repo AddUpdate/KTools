@@ -1,6 +1,6 @@
 package com.jiangkang.tools.utils;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  *

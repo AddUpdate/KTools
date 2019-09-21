@@ -1,9 +1,5 @@
 package com.jiangkang.gradle.groovy
 
-import com.jiangkang.gradle.kotlin.Deps
-
-
-
 buildscript {
 
     buildscript {
@@ -11,7 +7,7 @@ buildscript {
             jcenter()
         }
         dependencies {
-            classpath Deps.androidPlugin
+            classpath "com.android.tools.build:gradle:3.5.0"
         }
     }
 

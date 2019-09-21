@@ -3,8 +3,8 @@ package com.jiangkang.ktools.image
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.jiangkang.ktools.R
 import kotlinx.android.synthetic.main.activity_gallery.*
 
@@ -19,7 +19,7 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        rcGallery.layoutManager = LinearLayoutManager(this)
+        rcGallery.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rcGallery.adapter = GalleryAdapter(this)
     }
 

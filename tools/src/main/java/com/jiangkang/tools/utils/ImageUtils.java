@@ -3,11 +3,9 @@ package com.jiangkang.tools.utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.support.v4.print.PrintHelper;
+import androidx.print.PrintHelper;
 import android.util.Base64;
 import android.util.Log;
-
-import com.jiangkang.tools.King;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

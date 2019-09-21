@@ -1,13 +1,13 @@
 package com.jiangkang.ktools.animation
 
 import android.app.Activity
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.animation.DynamicAnimation
-import android.support.animation.FloatPropertyCompat
-import android.support.animation.SpringAnimation
-import android.support.animation.SpringForce
-import android.support.annotation.IdRes
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.FloatPropertyCompat
+import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.dynamicanimation.animation.SpringForce
+import androidx.annotation.IdRes
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup

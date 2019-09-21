@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Debug
 import android.os.StrictMode
-import android.support.multidex.MultiDex
+import androidx.multidex.MultiDex
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.github.anrwatchdog.ANRWatchDog
 import com.jiangkang.tools.King

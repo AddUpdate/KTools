@@ -1,6 +1,6 @@
 package com.jiangkang.tools.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

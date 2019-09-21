@@ -1,4 +1,4 @@
-import com.jiangkang.gradle.kotlin.Deps
+
 import com.jiangkang.gradle.kotlin.Versions
 
 apply plugin: 'com.android.application'
@@ -28,7 +28,7 @@ android {
         targetSdkVersion Versions.targetSdkVersion
         versionCode Versions.versionCode
         versionName Versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
 
@@ -63,6 +63,7 @@ android {
 
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+        exclude group: 'com.google.guava', module: 'listenablefuture'
     }
 
 
@@ -137,88 +138,88 @@ dependencies {
 
         implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-        implementation Deps.Support.v4
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-        implementation Deps.Support.constraint_layout
-        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-        androidTestImplementation(Deps.Support.Test.espresso) {
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        androidTestImplementation('androidx.test.espresso:espresso-core:3.2.0') {
             exclude group: 'com.android.support', module: 'support-annotations'
         }
 
-        androidTestImplementation Deps.Support.supportAnnotations
+        androidTestImplementation 'androidx.annotation:annotation:1.1.0'
 //        androidTestImplementation 'com.android.support.test:runner:1.0.2'
 //        androidTestImplementation 'com.android.support.test:rules:1.0.2'
         // Optional -- Hamcrest library
         androidTestImplementation 'org.hamcrest:hamcrest-library:2.1'
         // Optional -- UI testing with UI Automator
-        androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+        androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
-        testImplementation Deps.junit
-        testImplementation Deps.robolectric
-        testImplementation Deps.Test.mockito
+        testImplementation "junit:junit:4.12"
+        testImplementation 'org.robolectric:robolectric:4.3'
+        testImplementation 'org.mockito:mockito-core:3.0.0'
 
-        debugImplementation Deps.LeakCanary.leakcanary
-        releaseImplementation Deps.LeakCanary.leakcanary_no_op
+        debugImplementation "com.squareup.leakcanary:leakcanary-android:1.5.1"
+        releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:1.5.1"
 
-        debugImplementation Deps.debug_db
+        debugImplementation "com.amitshekhar.android:debug-db:1.0.0"
         debugImplementation('com.facebook.sonar:sonar:0.6.13') {
 //        exclude group: 'android.arch.lifecycle', module: 'runtime'
         }
 
-        implementation Deps.ButterKnife.butterknife
-        kapt Deps.ButterKnife.compiler
+        implementation 'com.jakewharton:butterknife:10.2.0'
+        kapt 'com.jakewharton:butterknife-compiler:10.2.0'
 
-        implementation Deps.RxJava.rxjava
-        implementation Deps.RxJava.rxanroid
+        implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+        implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
 //    implementation 'com.facebook.stetho:stetho:1.5.0'
 //    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
-        implementation Deps.Support.v7
-        implementation Deps.Support.recyclerview
-        implementation Deps.Support.cardview
-        implementation Deps.Support.constraint_layout
-        implementation Deps.Support.design
+        implementation 'androidx.appcompat:appcompat:1.1.0'
+        implementation 'androidx.recyclerview:recyclerview:1.0.0'
+        implementation 'androidx.cardview:cardview:1.0.0'
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        implementation 'com.google.android.material:material:1.0.0'
 
-        implementation Deps.Retrofit.retrofit
-        implementation Deps.Retrofit.convert_json
-        implementation Deps.Retrofit.adapter_rxjava2
+        implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+        implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+        implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
 
-        debugImplementation Deps.OkHttp.chuck
-        releaseImplementation Deps.OkHttp.chuck_no_op
+        debugImplementation "com.readystatesoftware.chuck:library:1.1.0"
+        releaseImplementation "com.readystatesoftware.chuck:library-no-op:1.1.0"
 
-        implementation Deps.Dagger.dagger_android
-        implementation Deps.Dagger.dagger_android_support
-        kapt Deps.Dagger.compiler
+        implementation 'com.google.dagger:dagger-android:2.24'
+        implementation 'com.google.dagger:dagger-android-support:2.24'
+        kapt 'com.google.dagger:dagger-android-processor:2.24'
 
-        implementation Deps.Glide.glide
-        implementation Deps.Glide.okhttp
-        kapt Deps.Glide.compiler
+        implementation 'com.github.bumptech.glide:glide:4.10.0'
+        implementation 'com.github.bumptech.glide:okhttp3-integration:4.10.0'
+        kapt 'com.github.bumptech.glide:compiler:4.10.0'
 
-        implementation Deps.OkHttp.okhttp3
-        testImplementation Deps.OkHttp.mockwebserver
-        implementation Deps.OkHttp.logginginterceptor
+        implementation 'com.squareup.okhttp3:okhttp:4.2.0'
+        testImplementation 'com.squareup.okhttp3:mockwebserver:4.2.0'
+        implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
 
-        implementation Deps.Arch.Lifecycle.runtime
-        implementation Deps.Arch.Lifecycle.extentions
+        implementation 'androidx.lifecycle:lifecycle-runtime:2.1.0'
+        implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 
-        implementation Deps.Arch.Room.runtime
-        implementation Deps.Arch.Room.rxjava2
-        kapt Deps.Arch.Room.compiler
+        implementation 'androidx.room:room-runtime:2.1.0'
+        implementation 'androidx.room:room-rxjava2:2.1.0'
+        kapt 'androidx.room:room-compiler:2.1.0'
 
-        implementation Deps.kotlin
-        implementation Deps.anko
-        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M2'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
+        implementation "org.jetbrains.anko:anko:0.10.8"
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
 
-        implementation Deps.Support.multidex
+        implementation 'androidx.multidex:multidex:2.0.1'
 
-        implementation Deps.EventBus.eventbus
-        implementation Deps.anrwatchdog
+        implementation "org.greenrobot:eventbus:3.1.1"
+        implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
 
-        implementation Deps.Arch.Navigation.fragment
-        implementation Deps.Arch.Navigation.ui
+        implementation 'androidx.navigation:navigation-fragment:2.2.0-alpha03'
+        implementation 'androidx.navigation:navigation-ui:2.2.0-alpha03'
 
-        implementation Deps.Support.dynamic_animation
+        implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
 
         // AndroidJUnitRunner and JUnit Rules
 //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
