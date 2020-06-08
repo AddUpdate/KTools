@@ -59,12 +59,12 @@ class KWebChromeClient : WebChromeClient {
     }
 
 
-    override fun getDefaultVideoPoster(): Bitmap {
+    override fun getDefaultVideoPoster(): Bitmap? {
         return super.getDefaultVideoPoster()
     }
 
 
-    override fun getVideoLoadingProgressView(): View {
+    override fun getVideoLoadingProgressView(): View? {
         return super.getVideoLoadingProgressView()
     }
 

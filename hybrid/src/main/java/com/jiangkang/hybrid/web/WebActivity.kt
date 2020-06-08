@@ -1,6 +1,7 @@
 package com.jiangkang.hybrid.web
 
 import android.annotation.TargetApi
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -28,7 +29,7 @@ import kotlinx.android.synthetic.main.activity_web.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
-class WebActivity : AppCompatActivity(), WebContract.IView {
+class WebActivity : Activity(), WebContract.IView {
 
     override val tvTitle: TextView
         get() {
@@ -78,7 +79,7 @@ class WebActivity : AppCompatActivity(), WebContract.IView {
             if (CONTEXT_MENU_ID_DOWNLOAD_IMAGE == item.itemId) {
                 if (isHttpUrl(url) or isHttpsUrl(url)) {
                     GlobalScope.async {
-                        val bmpDownloaded = DownloadUtils.getInstance().downloadImage(url)
+                        val bmpDownloaded = DownloadUtils.getInstance().downloadImage(url!!)
                         runOnUiThread {
                             ToastUtils.showShortToast("图片下载成功")
                             KDialog.showImgInDialog(this@WebActivity, bmpDownloaded)

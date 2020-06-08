@@ -1,0 +1,21 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/jiangkang/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake",
+    "/Users/jiangkang/Library/Android/sdk/ndk/21.0.6113669/build/cmake/platforms.cmake",
+    "/Users/jiangkang/MyProjects/KTools/jni/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/jiangkang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/jiangkang/MyProjects/KTools/jni/.cxx/cmake/debug/x86\" clean"
+  ],
+  "buildTargetsCommand": "/Users/jiangkang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/jiangkang/MyProjects/KTools/jni/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {},
+  "toolchains": {
+    "2561523648": {
+      "cCompilerExecutable": "/Users/jiangkang/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+      "cppCompilerExecutable": "/Users/jiangkang/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}

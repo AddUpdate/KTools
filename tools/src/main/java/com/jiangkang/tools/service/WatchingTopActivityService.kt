@@ -59,7 +59,7 @@ class WatchingTopActivityService : Service() {
 
             val runningTasks = mContext.activityManager.getRunningTasks(1)
 
-            val topActivity = "${runningTasks[0].topActivity.packageName}\n${runningTasks[0].topActivity.className}"
+            val topActivity = "${runningTasks[0].topActivity?.packageName}\n${runningTasks[0].topActivity?.className}"
 
             if (info !== topActivity) {
                 info = topActivity

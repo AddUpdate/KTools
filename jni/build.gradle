@@ -1,4 +1,4 @@
-import com.jiangkang.gradle.kotlin.Versions
+
 
 
 apply plugin: 'com.android.library'
@@ -6,11 +6,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion Versions.compileSdkVersion
+    compileSdkVersion 29
 
     defaultConfig {
-        minSdkVersion Versions.minSdkVersion
-        targetSdkVersion Versions.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
