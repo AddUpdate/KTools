@@ -1,0 +1,22 @@
+include(
+        ":app",
+        ":tools",
+        ":requests",
+        ":annotations",
+        ":storage",
+        ":hack",
+        ":widget",
+        ":kdownloader",
+        ":compiler",
+        ":hybrid",
+        ":jni",
+        ":design",
+        ":jetpack",
+        ":image",
+        ":anko",
+        ":klint",
+        ":kanimation",
+        ":container",
+        ":media"
+)
+rootProject.buildFileName = "build.gradle.kts"
