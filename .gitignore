@@ -58,4 +58,8 @@ freeline_project_description.json
 # node.js
 # node_modules/
 npm-debug.log
-
+/app/.cxx/**
+/jni/.cxx/**
+/app/.cxx/cmake/debug/armeabi-v7a/
+/jni/.cxx/cmake/debug/armeabi-v7a/
+/.idea/caches/
