@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case 0:
-//                AboutActivity.launch(this, null);
+                startActivity(new Intent(MainActivity.this,AboutActivity.class));
 //                RouterHelper.startAboutActivity(this);
                 break;
             case 1:
