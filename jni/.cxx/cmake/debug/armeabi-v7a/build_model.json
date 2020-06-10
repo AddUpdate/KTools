@@ -101,7 +101,7 @@
       "gradleModulePathName": ":jni",
       "intermediatesFolder": "/Users/jiangkang/MyProjects/KTools/jni/build/intermediates",
       "makeFile": "/Users/jiangkang/MyProjects/KTools/jni/CMakeLists.txt",
-      "moduleBuildFile": "/Users/jiangkang/MyProjects/KTools/jni/build.gradle",
+      "moduleBuildFile": "/Users/jiangkang/MyProjects/KTools/jni/build.gradle.kts",
       "moduleRootFolder": "/Users/jiangkang/MyProjects/KTools/jni",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
