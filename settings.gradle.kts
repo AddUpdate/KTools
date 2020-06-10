@@ -19,4 +19,4 @@ include(
         ":container",
         ":media"
 )
-rootProject.buildFileName = "build.gradle.kts"
+rootProject.buildFileName = "build.gradle.kts.kts"

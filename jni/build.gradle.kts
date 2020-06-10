@@ -22,7 +22,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
-            abiFilters("armeabi-v7a", "x86")
+            abiFilters("arm64-v8a")
         }
     }
 
@@ -58,4 +58,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
     implementation(project(":tools"))
+}
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
 }

@@ -63,3 +63,4 @@ npm-debug.log
 /app/.cxx/cmake/debug/armeabi-v7a/
 /jni/.cxx/cmake/debug/armeabi-v7a/
 /.idea/caches/
+/.idea/

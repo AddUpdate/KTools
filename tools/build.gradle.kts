@@ -22,7 +22,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
-            abiFilters("armeabi-v7a", "x86")
+            abiFilters("arm64-v8a")
         }
     }
 
@@ -39,17 +39,17 @@ android {
 dependencies {
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0", {
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0") {
         exclude("com.android.support","support-annotations")
-    })
-    testImplementation("junit:junit:4.12")
+    }
+    testImplementation("junit:junit:4.13")
     testImplementation("org.robolectric:robolectric:4.3.1")
     testImplementation("org.mockito:mockito-core:3.0.0")
 
     implementation("com.google.zxing:core:3.4.0")
 
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
-    implementation("io.reactivex.rxjava2:rxjava:2.2.6")
+    implementation("io.reactivex.rxjava2:rxjava:2.2.9")
 
     implementation("com.squareup.okhttp3:okhttp:4.4.0")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.2.0")
@@ -65,8 +65,10 @@ dependencies {
     
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
     implementation("org.jetbrains.anko:anko:0.10.8")
-    testImplementation("com.google.android:android:4.1.1.4")
+//    testImplementation("com.google.android:android:4.1.1.4")
 }
 repositories {
+    jcenter()
     mavenCentral()
+    google()
 }

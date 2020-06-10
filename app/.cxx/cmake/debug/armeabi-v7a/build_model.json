@@ -168,7 +168,6 @@
       "project": {
         "compilerSettingsCacheFolder": "/Users/jiangkang/MyProjects/KTools/.cxx",
         "cxxFolder": "/Users/jiangkang/MyProjects/KTools/.cxx",
-        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
@@ -192,7 +191,8 @@
     "objFolder": "/Users/jiangkang/MyProjects/KTools/app/build/intermediates/cmake/debug/obj",
     "variantName": "debug",
     "validAbiList": [
-      "ARMEABI_V7A"
+      "ARMEABI_V7A",
+      "X86"
     ],
     "prefabDirectory": "/Users/jiangkang/MyProjects/KTools/app/.cxx/cmake/debug/prefab",
     "prefabPackageDirectoryList": []

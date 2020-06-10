@@ -21,7 +21,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
-            abiFilters("armeabi-v7a", "x86")
+            abiFilters("arm64-v8a")
         }
     }
 
@@ -49,4 +49,10 @@ dependencies {
     implementation("com.airbnb.android:lottie:3.4.1")
     implementation(project(":tools"))
 
+}
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
 }

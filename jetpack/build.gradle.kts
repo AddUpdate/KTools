@@ -22,7 +22,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
-            abiFilters("armeabi-v7a", "x86")
+            abiFilters("arm64-v8a")
         }
     }
 
@@ -86,4 +86,10 @@ dependencies {
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.6.1")
     implementation(project(":hybrid"))
 
+}
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
 }
