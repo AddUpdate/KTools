@@ -2,12 +2,15 @@ package com.jiangkang.ktools
 
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.os.Debug
 import android.os.StrictMode
+import androidx.core.util.LogWriter
 import androidx.multidex.MultiDex
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.github.anrwatchdog.ANRWatchDog
 import com.jiangkang.tools.King
+import com.jiangkang.tools.utils.ToastUtils
 import com.squareup.leakcanary.LeakCanary
 
 /**
@@ -16,19 +19,20 @@ import com.squareup.leakcanary.LeakCanary
  */
 open class KApplication : Application() {
 
-
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
 
         // TODO: 2018/1/30 测试框架与MultiDex不兼容，待处理
         MultiDex.install(this)
 
-//        try {
-//            HookUtils.attachBaseContext()
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-
+        Thread.setDefaultUncaughtExceptionHandler { t, e ->
+            val intent = Intent(applicationContext,CrashInfoActivity::class.java)
+                    .apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        putExtra("crash_info",e.message)
+                    }
+            startActivity(intent)
+        }
     }
 
     override fun onCreate() {
@@ -43,12 +47,10 @@ open class KApplication : Application() {
 
         initANRWatchDog()
 
-
         Debug.stopMethodTracing()
 
 
         Fresco.initialize(this)
-
     }
 
 
