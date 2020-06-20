@@ -24,6 +24,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
+
             abiFilters("arm64-v8a")
         }
     }
@@ -184,7 +185,6 @@ dependencies {
     implementation(project(":tools"))
     implementation(project(":kdownloader"))
     implementation(project(":hybrid"))
-    implementation(project(":jni"))
     implementation(project(":storage"))
     kapt(project (":compiler"))
     implementation(project(":jetpack"))

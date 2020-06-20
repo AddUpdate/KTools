@@ -1,3 +1,4 @@
+include(":ndk")
 include(
         ":app",
         ":tools",
@@ -9,7 +10,6 @@ include(
         ":kdownloader",
         ":compiler",
         ":hybrid",
-        ":jni",
         ":design",
         ":jetpack",
         ":image",

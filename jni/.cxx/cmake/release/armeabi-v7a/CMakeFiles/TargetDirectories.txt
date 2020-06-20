@@ -1,2 +1,0 @@
-/Users/jiangkang/MyProjects/KTools/jni/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/Users/jiangkang/MyProjects/KTools/jni/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
