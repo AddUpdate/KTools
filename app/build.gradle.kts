@@ -13,6 +13,8 @@ android {
 
     //构建工具的版本，在build-tools中的那些(aapt,dexdump,zipalign,apksigner)，一般是API-Level.x.x
     buildToolsVersion("29.0.3")
+    
+    ndkVersion = "21.1.6352462"
 
     defaultConfig {
         applicationId = "com.jiangkang.ktools"

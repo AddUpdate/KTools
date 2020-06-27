@@ -44,6 +44,7 @@ android {
             jniLibs.srcDirs("./libs/arm64-v8a")
         }
     }
+    ndkVersion = "21.1.6352462"
 
 }
 
