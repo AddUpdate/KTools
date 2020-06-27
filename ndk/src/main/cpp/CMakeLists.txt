@@ -3,13 +3,14 @@ set(DIR_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../libs)
 
 include_directories(
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libavcodec
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libavdevice
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libavfilter
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libavformat
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libavutil
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libswresample
-        ${DIR_INCLUDE}/${ANDROID_ABI}/libswscale
+        ${DIR_INCLUDE}/${ANDROID_ABI}
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libavcodec
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libavdevice
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libavfilter
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libavformat
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libavutil
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libswresample
+#        ${DIR_INCLUDE}/${ANDROID_ABI}/libswscale
 )
 
 find_library(lib_lib_swscale ${LIB_PATH}/${ANDROID_ABI}/liblib_swscale.so)

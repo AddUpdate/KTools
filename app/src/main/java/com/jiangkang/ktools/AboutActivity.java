@@ -1,6 +1,7 @@
 package com.jiangkang.ktools;
 
 import android.os.Bundle;
+import android.system.Os;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;

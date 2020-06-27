@@ -1,4 +1,3 @@
-include(":ndk")
 include(
         ":app",
         ":tools",
@@ -17,6 +16,7 @@ include(
         ":klint",
         ":kanimation",
         ":container",
-        ":media"
+        ":media",
+        ":ndk"
 )
 rootProject.buildFileName = "build.gradle.kts.kts"
