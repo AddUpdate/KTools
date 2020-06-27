@@ -12,6 +12,8 @@ android {
     //构建工具的版本，在build-tools中的那些(aapt,dexdump,zipalign,apksigner)，一般是API-Level.x.x
     buildToolsVersion("29.0.3")
 
+    ndkVersion = " 21.3.6528147"
+
     defaultConfig {
         minSdkVersion(21)
         targetSdkVersion(29)
