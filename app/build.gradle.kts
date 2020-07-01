@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -19,15 +18,14 @@ android {
 
     defaultConfig {
         applicationId = "com.jiangkang.ktools"
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(vMinSdkVersion)
+        targetSdkVersion(vTargetSdkVersion)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         ndk {
-
             abiFilters("arm64-v8a")
         }
     }
@@ -109,20 +107,18 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0") {
+    implementation(AndroidX.recyclerView)
+    androidTestImplementation(AndroidX.espressoCore) {
         exclude("com.android.support", "support-annotations")
     }
 
-    androidTestImplementation("androidx.annotation:annotation:1.1.0")
+    androidTestImplementation(AndroidX.annotation)
 
     androidTestImplementation("org.hamcrest:hamcrest-library:2.1")
     // Optional -- UI testing with UI Automator
     androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
 
-    testImplementation("junit:junit:4.13")
-//    testImplementation("org.robolectric:robolectric:4.3.1")
+    testImplementation(junit)
     testImplementation("org.mockito:mockito-core:3.3.3")
 
     debugImplementation("com.squareup.leakcanary:leakcanary-android:1.5.1")
@@ -135,18 +131,14 @@ dependencies {
 
     implementation("com.jakewharton:butterknife:10.2.0")
     kapt("com.jakewharton:butterknife-compiler:10.2.0")
-
     implementation("io.reactivex.rxjava2:rxjava:2.2.9")
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
-
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("com.google.android.material:material:1.1.0")
-    implementation("com.squareup.retrofit2:retrofit:2.6.1")
-    implementation("com.squareup.retrofit2:converter-gson:2.6.1")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:2.6.1")
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.recyclerView)
+    implementation(AndroidX.cardView)
+    implementation(AndroidX.constraintLayout)
+    implementation(material)
+    retrofit()
     debugImplementation("com.readystatesoftware.chuck:library:1.1.0")
     releaseImplementation("com.readystatesoftware.chuck:library-no-op:1.1.0")
     implementation("com.google.dagger:dagger-android:2.24")
@@ -155,32 +147,22 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.11.0")
     implementation("com.github.bumptech.glide:okhttp3-integration:4.11.0")
     kapt("com.github.bumptech.glide:compiler:4.11.0")
-    implementation("com.squareup.okhttp3:okhttp:4.4.0")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.2.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.0")
-//
+    okHttp()
     implementation("androidx.lifecycle:lifecycle-runtime:2.2.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-
     implementation("androidx.room:room-runtime:2.2.5")
     implementation("androidx.room:room-rxjava2:2.2.5")
     kapt("androidx.room:room-compiler:2.2.5")
-
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
+    implementation(kotlin("stdlib-jdk7"))
     implementation("org.jetbrains.anko:anko:0.10.8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
-//
+    implementation(Kotlin.coroutines)
     implementation("androidx.multidex:multidex:2.0.1")
-
     implementation("org.greenrobot:eventbus:3.1.1")
     implementation("com.github.anrwatchdog:anrwatchdog:1.4.0")
-
-    implementation("androidx.navigation:navigation-fragment:2.3.0-beta01")
-    implementation("androidx.navigation:navigation-ui:2.3.0-beta01")
+    implementation("androidx.navigation:navigation-fragment:2.3.0")
+    implementation("androidx.navigation:navigation-ui:2.3.0")
 
     implementation("androidx.dynamicanimation:dynamicanimation:1.0.0")
-//
-//
     implementation(project(":widget"))
     implementation(project(":requests"))
     implementation(project(":annotations"))
@@ -196,11 +178,16 @@ dependencies {
     lintChecks(project (":klint"))
     implementation(project(":design"))
     implementation(project(":container"))
-
-//        implementation() project(":flutter")
-
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency {
+        val group = this.requested.group
+        val name = this.requested.name
+        val version = this.requested.version
+        println("$group:$name:$version")
+    }
+}
 
 task("copy", Copy::class) {
     from("build/outputs/apk/debug/")

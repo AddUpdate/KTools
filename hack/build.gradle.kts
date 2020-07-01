@@ -14,8 +14,8 @@ android {
     buildToolsVersion(vBuildToolsVersion)
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(vMinSdkVersion)
+        targetSdkVersion(vTargetSdkVersion)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -48,14 +48,14 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation(AndroidX.appcompat)
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.2.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    androidTestImplementation(AndroidX.testRunner)
+    androidTestImplementation(AndroidX.espressoCore)
     implementation("com.jakewharton:butterknife:10.2.0")
     kapt("com.jakewharton:butterknife-compiler:10.2.0")
     implementation(project(":tools"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
+    implementation(kotlin("stdlib-jdk7"))
     lintChecks(project(":klint"))
 }
 

@@ -13,8 +13,8 @@ android {
     buildToolsVersion(vBuildToolsVersion)
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(vMinSdkVersion)
+        targetSdkVersion(vTargetSdkVersion)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -37,18 +37,18 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation(AndroidX.appcompat)
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.2.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    testImplementation(junit)
+    androidTestImplementation(AndroidX.testRunner)
+    androidTestImplementation(AndroidX.espressoCore)
     api("com.facebook.fresco:fresco:2.0.0")
     api("com.facebook.fresco:animated-gif:2.0.0")
     api("com.facebook.fresco:webpsupport:2.0.0")
     api("com.facebook.fresco:animated-webp:2.0.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation(kotlin("stdlib-jdk7"))
+    implementation(AndroidX.constraintLayout)
 }
 
 repositories {

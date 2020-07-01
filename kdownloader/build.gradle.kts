@@ -13,8 +13,8 @@ android {
     buildToolsVersion(vBuildToolsVersion)
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(vMinSdkVersion)
+        targetSdkVersion(vTargetSdkVersion)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -38,20 +38,17 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    testImplementation("junit:junit:4.13")
+    implementation(AndroidX.appcompat)
+    implementation(AndroidX.constraintLayout)
+    testImplementation(junit)
 
-    androidTestImplementation("androidx.test:runner:1.2.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    androidTestImplementation(AndroidX.testRunner)
+    androidTestImplementation(AndroidX.espressoCore)
 
-    implementation("com.squareup.okhttp3:okhttp:4.4.0")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.2.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.0")
-
-
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
+    okHttp()
+    
+    implementation(Kotlin.coroutines)
+    implementation(kotlin("stdlib-jdk7"))
     implementation(project(":tools"))
 }
 
