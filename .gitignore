@@ -66,3 +66,4 @@ npm-debug.log
 /.idea/
 /.idea/caches/
 /.idea/caches/
+/app/.cxx/
