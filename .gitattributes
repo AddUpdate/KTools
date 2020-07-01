@@ -1,5 +1,3 @@
 *.kt linguist-language=Kotlin
-*.java linguist-language=Kotlin
 *.h linguist-language=Kotlin
-*.cc linguist-language=Kotlin
-*.cpp linguist-language=Kotlin
+
