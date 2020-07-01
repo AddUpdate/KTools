@@ -7,10 +7,10 @@ plugins {
 android {
 
     //仅仅在编译的时候起作用，建议总是使用最新版本，值是一个API Level
-    compileSdkVersion(29)
+    compileSdkVersion(vCompileSdkVersion)
 
     //构建工具的版本，在build-tools中的那些(aapt,dexdump,zipalign,apksigner)，一般是API-Level.x.x
-    buildToolsVersion("29.0.3")
+    buildToolsVersion(vBuildToolsVersion)
 
     defaultConfig {
         minSdkVersion(21)
