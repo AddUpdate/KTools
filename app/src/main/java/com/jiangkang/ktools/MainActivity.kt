@@ -24,7 +24,6 @@ class MainActivity : BaseActivity() {
             window.exitTransition = Explode()
         }
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
         initViews()
         reportFullyDrawn()
     }

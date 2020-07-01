@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     `kotlin-dsl`
 }
@@ -10,19 +12,25 @@ dependencies {
 //    implementation(localGroovy())
 //    implementation("org.ow2.asm:asm:7.1")
 //    implementation("javassist:javassist:3.12.1.GA")
+    implementation(kotlin("stdlib-jdk8"))
 }
-//buildscript {
-//    repositories {
-//        mavenCentral()
-//        jcenter()
-//        google()
-//    }
-//    dependencies {
-//        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
-//    }
-//}
+
+sourceSets {
+    getByName("main") {
+        java.srcDirs("src/main/kotlin")
+    }
+}
+
 repositories {
     mavenCentral()
     jcenter()
     google()
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }

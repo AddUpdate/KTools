@@ -1,6 +1,5 @@
 buildscript {
 
-    val kotlin_version by extra("1.3.72")
     repositories {
         jcenter()
         mavenCentral()
@@ -17,6 +16,10 @@ buildscript {
 }
 
 allprojects {
+    println(this.name)
+    this.subprojects {
+        println("sub:${this.name}")
+    }
     repositories {
         jcenter()
         google()
@@ -26,15 +29,6 @@ allprojects {
 
 task("clean",Delete::class){
     delete(rootProject.buildDir)
-}
-
-tasks.withType(JavaCompile::class){
-    options.compilerArgs = listOf(
-            "-Xlint:all",
-            "-Xlint:-serial",
-            "-Xlint:-deprecation",
-            "-Werror"
-    )
 }
 
 

@@ -1,3 +1,5 @@
+import com.jiangkang.AndroidConfigs
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -14,7 +16,7 @@ android {
     //构建工具的版本，在build-tools中的那些(aapt,dexdump,zipalign,apksigner)，一般是API-Level.x.x
     buildToolsVersion("29.0.3")
     
-    ndkVersion = "21.3.6528147"
+    ndkVersion = AndroidConfigs.ndkVersion
 
     defaultConfig {
         applicationId = "com.jiangkang.ktools"
@@ -121,8 +123,8 @@ dependencies {
     androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
 
     testImplementation("junit:junit:4.13")
-    testImplementation("org.robolectric:robolectric:4.3.1")
-    testImplementation("org.mockito:mockito-core:3.0.0")
+//    testImplementation("org.robolectric:robolectric:4.3.1")
+    testImplementation("org.mockito:mockito-core:3.3.3")
 
     debugImplementation("com.squareup.leakcanary:leakcanary-android:1.5.1")
     releaseImplementation("com.squareup.leakcanary:leakcanary-android-no-op:1.5.1")

@@ -43,8 +43,7 @@ dependencies {
         exclude("com.android.support","support-annotations")
     }
     testImplementation("junit:junit:4.13")
-    testImplementation("org.robolectric:robolectric:4.3.1")
-    testImplementation("org.mockito:mockito-core:3.0.0")
+    testImplementation("org.mockito:mockito-core:3.3.3")
 
     implementation("com.google.zxing:core:3.4.0")
 
